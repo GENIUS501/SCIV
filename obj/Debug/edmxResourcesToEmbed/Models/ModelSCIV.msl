@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SCIVModelStoreContainer" CdmEntityContainer="SCIVEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SCIVModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Bitacora_Movimientos">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Bitacora_Movimientos">
+        <MappingFragment StoreEntitySet="Tab_Bitacora_Movimientos">
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Id_Movimiento" ColumnName="Id_Movimiento" />
+          <ScalarProperty Name="Tipo_Movimiento" ColumnName="Tipo_Movimiento" />
+          <ScalarProperty Name="Modulo_Afectado" ColumnName="Modulo_Afectado" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Bitacora_Sesiones">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Bitacora_Sesiones">
+        <MappingFragment StoreEntitySet="Tab_Bitacora_Sesiones">
+          <ScalarProperty Name="Id_Sesion" ColumnName="Id_Sesion" />
+          <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Empresa">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Empresa">
+        <MappingFragment StoreEntitySet="Tab_Empresa">
+          <ScalarProperty Name="Cedula_Juridica" ColumnName="Cedula_Juridica" />
+          <ScalarProperty Name="Nombre_Empresa" ColumnName="Nombre_Empresa" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Lista_Ventas">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Lista_Ventas">
+        <MappingFragment StoreEntitySet="Tab_Lista_Ventas">
+          <ScalarProperty Name="Cedula_Empresa" ColumnName="Cedula_Empresa" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Id_Lista" ColumnName="Id_Lista" />
+          <ScalarProperty Name="NickName_Creador" ColumnName="NickName_Creador" />
+          <ScalarProperty Name="Nota_Adicional" ColumnName="Nota_Adicional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Lista_Ventas_Detalles">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Lista_Ventas_Detalles">
+        <MappingFragment StoreEntitySet="Tab_Lista_Ventas_Detalles">
+          <ScalarProperty Name="Id_Lista" ColumnName="Id_Lista" />
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="Paquetes" ColumnName="Paquetes" />
+          <ScalarProperty Name="Cantidad_Total" ColumnName="Cantidad_Total" />
+          <ScalarProperty Name="Cantidad_Actual" ColumnName="Cantidad_Actual" />
+          <ScalarProperty Name="Precio_Costo" ColumnName="Precio_Costo" />
+          <ScalarProperty Name="Porcentaje_Ganancia" ColumnName="Porcentaje_Ganancia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Perfiles">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Perfiles">
+        <MappingFragment StoreEntitySet="Tab_Perfiles">
+          <ScalarProperty Name="Id_Perfil" ColumnName="Id_Perfil" />
+          <ScalarProperty Name="Nombre_Perfil" ColumnName="Nombre_Perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Permisos">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Permisos">
+        <MappingFragment StoreEntitySet="Tab_Permisos">
+          <ScalarProperty Name="Id_Perfil" ColumnName="Id_Perfil" />
+          <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+          <ScalarProperty Name="Agregar" ColumnName="Agregar" />
+          <ScalarProperty Name="Modificar" ColumnName="Modificar" />
+          <ScalarProperty Name="Consultar" ColumnName="Consultar" />
+          <ScalarProperty Name="Eliminar" ColumnName="Eliminar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Productos">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Productos">
+        <MappingFragment StoreEntitySet="Tab_Productos">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre_producto" ColumnName="Nombre_producto" />
+          <ScalarProperty Name="Descripcion_producto" ColumnName="Descripcion_producto" />
+          <ScalarProperty Name="Precio_Costo" ColumnName="Precio_Costo" />
+          <ScalarProperty Name="Cantidad_Unidades" ColumnName="Cantidad_Unidades" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Telefono">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Telefono">
+        <MappingFragment StoreEntitySet="Tab_Telefono">
+          <ScalarProperty Name="Cedula_Juridica" ColumnName="Cedula_Juridica" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Usuarios">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Usuarios">
+        <MappingFragment StoreEntitySet="Tab_Usuarios">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Id_Perfil" ColumnName="Id_Perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tab_Venta_Detalle">
+      <EntityTypeMapping TypeName="SCIVModel.Tab_Venta_Detalle">
+        <MappingFragment StoreEntitySet="Tab_Venta_Detalle">
+          <ScalarProperty Name="Numero_Venta" ColumnName="Numero_Venta" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="porcentaje_ganancia" ColumnName="porcentaje_ganancia" />
+          <ScalarProperty Name="precio_costo" ColumnName="precio_costo" />
+          <ScalarProperty Name="Nota_Adicional" ColumnName="Nota_Adicional" />
+          <ScalarProperty Name="NickName_Creador" ColumnName="NickName_Creador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
