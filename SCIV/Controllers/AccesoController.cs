@@ -51,7 +51,8 @@ namespace SCIV.Controllers
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                return View();
+                return RedirectToAction("Index", "Home");
+             //   return View();
             }
         }
     }

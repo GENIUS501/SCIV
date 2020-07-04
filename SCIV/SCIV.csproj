@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ProcesosController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\SeguridadController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Filters\AuthorizeUser.cs" />
     <Compile Include="Filters\AuthorizeUserPermises.cs" />
     <Compile Include="Filters\Verificarsession.cs" />
@@ -261,6 +262,7 @@
     <Content Include="Views\Procesos\Index.cshtml" />
     <Content Include="Views\Shared\_Layout-Reportes.cshtml" />
     <Content Include="Views\Reportes\Index.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
