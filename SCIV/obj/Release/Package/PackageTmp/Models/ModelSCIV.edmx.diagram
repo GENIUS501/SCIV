@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab686783f1f3401b896cd1830fbe8cf6" Name="Diagram1">
+        <EntityTypeShape EntityType="SCIVModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Bitacora_Movimientos" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Bitacora_Sesiones" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Empresa" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Lista_Ventas" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Lista_Ventas_Detalles" Width="1.5" PointX="10.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Perfiles" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Permisos" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Productos" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Telefono" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Usuarios" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SCIVModel.Tab_Venta_Detalle" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="SCIVModel.Fk_Movimientos_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_Bitacora_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_ListaVenta_Emp" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_Telefono_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_ListaVentaD_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_ListaVentaD_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_ListaVentaDe_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_Permisos_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_Usuario_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_VentaD_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SCIVModel.Fk_VentaD_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

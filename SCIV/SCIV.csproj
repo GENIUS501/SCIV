@@ -203,7 +203,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imagenes\Coqueticas.jpeg" />
-    <Content Include="Imagenes\WhatsApp Image 2020-07-02 at 12.12.24.jpeg" />
     <Content Include="Models\ModelSCIV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelSCIV.Context.cs</LastGenOutput>
@@ -223,6 +222,9 @@
     <Content Include="Models\ModelSCIV.edmx.diagram">
       <DependentUpon>ModelSCIV.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\sciv - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\sciv - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\sciv - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

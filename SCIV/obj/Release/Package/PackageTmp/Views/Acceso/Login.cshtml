@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout-Copia.cshtml";
+}
+<center>
+    <h2>Login</h2>
+    <!--Mostrar Alerta-->
+    @Html.Raw(TempData["msg"])
+        <div class="row">
+            <div class="danger">
+                @ViewBag.Error
+            </div>
+            <form action="@Url.Content("~/Acceso/Login")" method="post">
+                <div class="form-group">
+                    <label>Usuario </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Usuario" />
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" name="Pass" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Entrar" class="btn-success" />
+                </div>
+            </form>
+        </div>
+    </center>
