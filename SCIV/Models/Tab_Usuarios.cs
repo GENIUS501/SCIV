@@ -27,7 +27,8 @@ namespace SCIV.Models
         //[StringLength(10, ErrorMessage = "El nombre es muy largo.")]
         public int Cedula { get; set; }
         [Required]
-
+        [MinLength(8,ErrorMessage ="El nombre de usuario es muy corto.")]
+        [StringLength(25, ErrorMessage = "El nombre de usuario es muy largo.")]
         public string NickName { get; set; }
         // [Required(ErrorMessage = "Debe especificar el nombre.")]
         [StringLength(30, ErrorMessage = "El nombre es muy largo.")]
@@ -43,7 +44,8 @@ namespace SCIV.Models
         public string Apellido2 { get; set; }
         [Required]
         [DataType(DataType.Password)]
-       // [StringLength(16, ErrorMessage ="La contraseña no contiene la cantidad de caracteres correcta",MinimumLength = 8)]
+        [MinLength(8, ErrorMessage = "La contraseña es muy corta.")]
+        // [StringLength(16, ErrorMessage ="La contraseña no contiene la cantidad de caracteres correcta",MinimumLength = 8)]
         public string Contrasena { get; set; }
         public string Genero { get; set; }
         public int Id_Perfil { get; set; }
