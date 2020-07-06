@@ -11,7 +11,8 @@ namespace SCIV.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tab_Usuarios
     {
         public Tab_Usuarios()
@@ -21,12 +22,28 @@ namespace SCIV.Models
             this.Tab_Lista_Ventas = new HashSet<Tab_Lista_Ventas>();
             this.Tab_Venta_Detalle = new HashSet<Tab_Venta_Detalle>();
         }
-    
+
+        [Required]
+        //[StringLength(10, ErrorMessage = "El nombre es muy largo.")]
         public int Cedula { get; set; }
+        [Required]
+
         public string NickName { get; set; }
+        // [Required(ErrorMessage = "Debe especificar el nombre.")]
+        [StringLength(30, ErrorMessage = "El nombre es muy largo.")]
+        [Required]
         public string Nombre { get; set; }
+        // [Required(ErrorMessage = "Debe especificar el primer apellido.")]
+        [StringLength(30, ErrorMessage = "El primer apellido es muy largo.")]
+        [Required]
         public string Apellido1 { get; set; }
+        //[Required(ErrorMessage = "Debe especificar el segundo apellido.")]
+        [StringLength(30, ErrorMessage = "El segundo apellido es muy largo.")]
+        [Required]
         public string Apellido2 { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+       // [StringLength(16, ErrorMessage ="La contraseña no contiene la cantidad de caracteres correcta",MinimumLength = 8)]
         public string Contrasena { get; set; }
         public string Genero { get; set; }
         public int Id_Perfil { get; set; }

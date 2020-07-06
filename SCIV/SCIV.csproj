@@ -192,6 +192,7 @@
     <Compile Include="Models\Tab_Venta_Detalle.cs">
       <DependentUpon>ModelSCIV.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\PerfilesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +264,8 @@
     <Content Include="Views\Shared\_Layout-Reportes.cshtml" />
     <Content Include="Views\Reportes\Index.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

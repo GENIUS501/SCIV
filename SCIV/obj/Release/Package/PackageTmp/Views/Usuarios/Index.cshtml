@@ -17,16 +17,16 @@
             @Html.DisplayNameFor(model => model.Cedula)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NickName)
+            <span>Nombre de Usuario</span>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido1)
+            <span>Primer apellido</span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido2)
+            <span>Segundo apellido</span>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Contrasena)
@@ -35,7 +35,7 @@
             @Html.DisplayNameFor(model => model.Genero)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Id_Perfil)
+            <span>Perfil de acceso</span>
         </th>
         <th></th>
     </tr>
@@ -77,9 +77,9 @@
                 @SCIV.Controllers.UsuariosController.NombrePerfil(item.Id_Perfil.ToString())
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Consultar", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Borrar", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Editar", "Edit", new { id = item.NickName }) |
+                @Html.ActionLink("Consultar", "Details", new { id = item.NickName }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.NickName })
             </td>
         </tr>
     }
