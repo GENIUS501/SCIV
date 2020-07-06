@@ -17,7 +17,7 @@
             @Html.DisplayNameFor(model => model.Cedula)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NickName)
+            <span>Nombre de Usuario</span>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -77,9 +77,9 @@
                 @SCIV.Controllers.UsuariosController.NombrePerfil(item.Id_Perfil.ToString())
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Consultar", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Borrar", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Editar", "Edit", new { id = item.NickName }) |
+                @Html.ActionLink("Consultar", "Details", new { id = item.NickName }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.NickName })
             </td>
         </tr>
     }
