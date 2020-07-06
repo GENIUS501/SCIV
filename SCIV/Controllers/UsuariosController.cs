@@ -159,6 +159,113 @@ namespace SCIV.Controllers
         }
         #endregion
 
+        #region Actualiza
+        //Le indica al metodo que reciba los datos por el metodo post
+        [HttpPost]
+        //Evita que se inicie de otro formulario
+        [ValidateAntiForgeryToken]
+        //Action result es el tipo de dato que retorna la funcion
+        public ActionResult Edit(Tab_Usuarios a)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                using (var db = new SCIVEntities())
+                {
+                    //Esto llena la entidad con los datos correspondientes a la entidad traida de la bd
+                    Tab_Usuarios usu = db.Tab_Usuarios.Find(a.NickName);
+                    //Asigna los valores traidos por la entidad traida de la vista a la entidad traida de la base de datos
+                    usu.Nombre = a.Nombre;
+                    usu.Apellido1 = a.Apellido1;
+                    usu.Apellido2 = a.Apellido2;
+                    usu.Cedula = a.Cedula;
+                    //Valida si hubo cambios en el input de contrasena y si los hubo reencripta la contrasena y la asigna a la entidad traida de la base de datos.
+                    if (usu.Contrasena == a.Contrasena)
+                    {
+
+                    }
+                    else
+                    {
+                        string passa = Helper.EncodePassword(string.Concat(a.NickName.ToString(), a.Contrasena.ToString()));
+                        usu.Contrasena = passa;
+                    }
+                    usu.Genero = a.Genero;
+                    usu.Id_Perfil = a.Id_Perfil;
+                    usu.Nombre = a.Nombre;
+                    usu.NickName = a.NickName;
+                    //Guarda los cambios en bd
+                    db.SaveChanges();
+                    //Envia los datos a la alerta
+                    TempData["msg"] = "<script>alert('Usuario editado exitosamente!!!');</script>";
+                    //retorna al index del modulo
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al editar el usuario!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
+        #region llenar details
+        //Autorizar acceso a la accion
+       // [AuthorizeUserPermises(accion: "C", idmodulo: 1)]
+        public ActionResult Details(string id)
+        {
+            try
+            {
+                using (var db = new SCIVEntities())
+                {
+                    //Consulta los datos correspondientes al id proveniente de la vista
+                    Tab_Usuarios usu = db.Tab_Usuarios.Where(a => a.NickName == id).FirstOrDefault();
+                    //Tab_Usuarios usua = db.Tab_Usuarios.Find(id);
+                    //Los devuelve a la vista
+                    return View(usu);
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al cargar los datos!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
+        #region Borrar
+        //Autorizar acceso a la accion
+       // [AuthorizeUserPermises(accion: "E", idmodulo: 1)]
+        public ActionResult Delete(string id)
+        {
+            try
+            {
+                using (var db = new SCIVEntities())
+                {
+                    //Consulta los datos correspondientes al id proveniente de la vista
+                    Tab_Usuarios usu = db.Tab_Usuarios.Where(a => a.NickName == id).FirstOrDefault();
+                    //Remueve del arreglo de entidades la entidad identificada enviada por la vista
+                    db.Tab_Usuarios.Remove(usu);
+                    //Guarda los cambios en la base de datos
+                    db.SaveChanges();
+                    TempData["msg"] = "<script>alert('Usuario eliminado exitosamente!!!');</script>";
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al eliminar el usuario!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
         #region Traer el nombre del perfil
         public static string NombrePerfil(string id)
         {
