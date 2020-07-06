@@ -31,5 +31,23 @@ namespace SCIV.Controllers
                 return View();
             }
         }
+
+        #region Traer el nombre del perfil
+        public static string NombrePerfil(string id)
+        {
+            try
+            {
+                using (var db = new SCIVEntities())
+                {
+                    //Retorna el nombre del perfil correspondiente al id enviado al metodo
+                    return db.Tab_Perfiles.Find(int.Parse(id)).Nombre_Perfil;
+                }
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+        }
+        #endregion
     }
 }
