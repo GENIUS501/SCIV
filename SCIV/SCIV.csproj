@@ -137,8 +137,10 @@
     <Compile Include="Controllers\ProcesosController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Controllers\Reporte_Bitacora_SesionesController.cs" />
     <Compile Include="Controllers\Reporte_EmpresasController.cs" />
     <Compile Include="Controllers\Reporte_Lista_VentasController.cs" />
+    <Compile Include="Controllers\Reporte_MovimientosController.cs" />
     <Compile Include="Controllers\Reporte_Venta_DetalleController.cs" />
     <Compile Include="Controllers\SeguridadController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -296,6 +298,8 @@
     <Content Include="Views\Reporte_Lista_Ventas\Index.cshtml" />
     <Content Include="Views\Reporte_Venta_Detalle\Index.cshtml" />
     <Content Include="Views\Reporte_Empresas\Index.cshtml" />
+    <Content Include="Views\Reporte_Bitacora_Sesiones\Index.cshtml" />
+    <Content Include="Views\Reporte_Movimientos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

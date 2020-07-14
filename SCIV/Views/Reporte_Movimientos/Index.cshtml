@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Bitacora_Movimientos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<h2>Bitacora de Movimientos</h2>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Usuario</label>
+    <div class="col-md-10">
+        <input type="text" name="Usuario" value="" class="form-control">
+        @Html.ActionLink("Generar", "Codigo")
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Fecha 1</label>
+    <div class="col-md-10">
+        <input type="date" name="Fecha" value="" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Fecha 2</label>
+    <div class="col-md-10">
+        <input type="date" name="Fecha2" value="" class="form-control" />
+        @Html.ActionLink("Generar", "Codigo")
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Movimiento</label>
+    <div class="col-md-10">
+        <select id="Movimiento" class="form-control">
+            <option>Agrego</option>
+            <option>Edito</option>
+            <option>Consulto</option>
+            <option>Elimino</option>
+        </select>
+        @Html.ActionLink("Generar", "Codigo")
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Movimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Movimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modulo_Afectado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NickName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Movimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Movimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modulo_Afectado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NickName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Bitacora_Sesiones>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<h2>Bitacora de Sesiones "Ingreso y Salida"</h2>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Usuario</label>
+    <div class="col-md-10">
+        <input type="text" name="Usuario" value="" class="form-control">
+        @Html.ActionLink("Generar", "Codigo")
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Fecha 1</label>
+    <div class="col-md-10">
+        <input type="date" name="Fecha" value="" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Fecha 2</label>
+    <div class="col-md-10">
+        <input type="date" name="Fecha2" value="" class="form-control" />
+        @Html.ActionLink("Generar", "Codigo")
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Sesion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NickName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Sesion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NickName)
+            </td>
+        </tr>
+    }
+
+</table>
