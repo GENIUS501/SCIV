@@ -822,5 +822,188 @@ namespace SCIV.Controllers
         }
         #endregion
 
+        #region llenar
+        private void llenar(int ida)
+        {
+            using (var db = new SCIVEntities())
+            {
+                List<Tab_Permisos> lista = db.Tab_Permisos.Where(a => a.Id_Perfil == ida).ToList();
+                foreach (var list in lista)
+                {
+                    if (list.Modulo == 1)
+                    {
+                        ViewBag.Mod_Usu = "true";
+                        #region Permisos de acceso
+                        if (list.Agregar == "S")
+                        {
+                            ViewBag.Agregar_usu = "true";
+                        }
+                        if (list.Modificar == "S")
+                        {
+                            ViewBag.Modificar_usu = "true";
+                        }
+                        if (list.Consultar == "S")
+                        {
+                            ViewBag.Consultar_usu = "true";
+                        }
+                        if (list.Eliminar == "S")
+                        {
+                            ViewBag.Eliminar_usu = "true";
+                        }
+                        #endregion
+                    }
+                    if (list.Modulo == 2)
+                    {
+                        ViewBag.Mod_Per = "true";
+                        #region Permisos de acceso
+                        if (list.Agregar == "S")
+                        {
+                            ViewBag.Agregar_Per = "true";
+                        }
+                        if (list.Modificar == "S")
+                        {
+                            ViewBag.Modificar_Per = "true";
+                        }
+                        if (list.Consultar == "S")
+                        {
+                            ViewBag.Consultar_Per = "true";
+                        }
+                        if (list.Eliminar == "S")
+                        {
+                            ViewBag.Eliminar_Per = "true";
+                        }
+                        #endregion
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region llenar el edit
+
+        public ActionResult Edit(string id)
+        {
+            try
+            {
+
+                //Abre y cierra la conexion a bd
+                using (var db = new SCIVEntities())
+                {
+                    //Declara y llena el objeto Usu
+                    int ida = int.Parse(id);
+                    Tab_Perfiles per = db.Tab_Perfiles.Where(a => a.Id_Perfil == ida).FirstOrDefault();
+                    llenar(int.Parse(id));
+                    //ViewBag.Lista_Permisos = lista;
+                    //Retorna los datos a la vista
+                    return View(per);
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al cargar los datos!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
+        #region Modificar
+        //Le indica al metodo que reciba los datos por el metodo post
+        [HttpPost]
+        //Evita que se inicie de otro formulario
+        [ValidateAntiForgeryToken]
+        //Action result es el tipo de dato que retorna la funcion
+        public ActionResult Edit(Tab_Perfiles a, FormCollection frm)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                using (var db = new SCIVEntities())
+                {
+                    //Esto llena la entidad con los datos correspondientes a la entidad traida de la bd
+                    Tab_Perfiles registro = db.Tab_Perfiles.Find(a.Id_Perfil);
+                    //Asigna los valores traidos por la entidad traida de la vista a la entidad traida de la base de datos
+                    //registro.Id_Perfil = a.Nombre;
+                    registro.Nombre_Perfil = a.Nombre_Perfil;
+                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == a.Id_Perfil));
+                    //Guarda los cambios en bd
+                    db.SaveChanges();
+                }
+                //Guarda los permisos
+                Grabar(a, frm);
+                //Envia los datos a la alerta
+                TempData["msg"] = "<script>alert('Perfil Editado exitosamente!!!');</script>";
+                //retorna al index del modulo
+                return RedirectToAction("index");
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al editar el perfil!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
+        #region llenar details
+        //Autorizar acceso a la accion
+        [AuthorizeUserPermises(accion: "C", idmodulo: 2)]
+        public ActionResult Details(string id)
+        {
+            try
+            {
+                using (var db = new SCIVEntities())
+                {
+                    int ida = int.Parse(id);
+                    //Consulta los datos correspondientes al id proveniente de la vista
+                    Tab_Perfiles registro = db.Tab_Perfiles.Where(a => a.Id_Perfil == ida).FirstOrDefault();
+                    llenar(int.Parse(id));
+                    //Tab_Usuarios usua = db.Tab_Usuarios.Find(id);
+                    //Los devuelve a la vista
+                    return View(registro);
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al cargar los datos!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
+        #region Borrar
+        //Autorizar acceso a la accion
+        [AuthorizeUserPermises(accion: "E", idmodulo: 2)]
+        public ActionResult Delete(string id)
+        {
+            try
+            {
+                using (var db = new SCIVEntities())
+                {
+                    //Consulta los datos correspondientes al id proveniente de la vista
+                    int ida = int.Parse(id);
+                    Tab_Perfiles registro = db.Tab_Perfiles.Where(a => a.Id_Perfil == ida).FirstOrDefault();
+                    //Remueve del arreglo de entidades la entidad identificada enviada por la vista
+                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
+                    db.Tab_Perfiles.Remove(registro);
+                    //Guarda los cambios en la base de datos
+                    db.SaveChanges();
+                    TempData["msg"] = "<script>alert('Perfil Eliminado exitosamente!!!');</script>";
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = "<script>alert('Error al eliminar el perfil!!!');</script>";
+                ModelState.AddModelError("Error", ex.Message);
+                return View();
+            }
+        }
+        #endregion
+
     }
 }

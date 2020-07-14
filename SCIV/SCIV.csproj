@@ -270,6 +270,7 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Perfiles\Index.cshtml" />
     <Content Include="Views\Perfiles\Create.cshtml" />
+    <Content Include="Views\Perfiles\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
