@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Empresa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout-Reportes.cshtml";
+}
+
+<h2>Reporte de empresa</h2>
+<div class="form-group">
+    <label class="control-label col-md-2">Cedula de Empresa</label>
+    <div class="col-md-10">
+        <input type="text" name="Cedula" value="" class="form-control" />
+        @Html.ActionLink("Generar", "Create")
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Nombre</label>
+    <div class="col-md-10">
+        <input type="text" name="Nombre" value="" class="form-control" />
+        @Html.ActionLink("Generar", "Create")
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Telefono</label>
+    <div class="col-md-10">
+        <input type="number" name="Telefono" value="" class="form-control" />
+        @Html.ActionLink("Generar", "Create")
+    </div>
+</div>
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <span>Cedula Juridica</span>
+        </th>
+        <th>
+            <span>Nombre de Empresa</span>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula_Juridica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+        </tr>
+    }
+
+</table>
