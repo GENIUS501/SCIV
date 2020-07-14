@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Lista_Ventas_Detalles>
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout - Mantenimientos.cshtml";
+}
+
+<h2>Editar Lista de ventas al por mayor</h2>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Cedula de Empresa</label>
+    <div class="col-md-10">
+        <input type="text" name="Cedula" value="" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Fecha</label>
+    <div class="col-md-10">
+        <input type="date" name="Fecha" value="" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Nota Adicional</label>
+    <div class="col-md-10">
+        <input type="text" name="Nota" value="" class="form-control" />
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Agregar Producto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Lista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paquetes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_Actual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio_Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Porcentaje_Ganancia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Lista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo_Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paquetes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_Actual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Porcentaje_Ganancia)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Cosultar", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Borrar", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

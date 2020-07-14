@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Lista_Ventas>
+
+@{
+    ViewBag.Title = "Unir";
+    Layout = "~/Views/Shared/_Layout-Procesos.cshtml";
+}
+
+<h2>Unir listas de ventas</h2>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Id Primer Lista</label>
+    <div class="col-md-10">
+        <input type="text" name="Ida" value="" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Id Segunda Lista</label>
+    <div class="col-md-10">
+        <input type="text" name="Idb" value="" class="form-control" />
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Unir", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <span>Cedula de la empresa</span>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            <span>Id de la lista</span>
+        </th>
+        <th>
+            <span>Usuario Creador</span>
+        </th>
+        <th>
+            <span>Nota adicional</span>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula_Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Lista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NickName_Creador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota_Adicional)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace SCIV.Controllers
 {
-    public class EmpresasController : Controller
+    public class ProductosController : Controller
     {
-        // GET: Empresas
+        // GET: Productos
         public ActionResult Index()
         {
             try
@@ -17,7 +17,7 @@ namespace SCIV.Controllers
                 using (SCIVEntities db = new SCIVEntities())
                 {
                     //Ent_Usuario = (Tab_Usuarios)HttpContext.Session["User"];
-                    List<Tab_Empresa> lista = db.Tab_Empresa.ToList();
+                    List<Tab_Productos> lista = db.Tab_Productos.ToList();
                     return View(lista);
                 }
             }
@@ -29,26 +29,32 @@ namespace SCIV.Controllers
             }
         }
 
-            #region Agregar
-            public ActionResult Create(Tab_Empresa emp)
-            {
-                return View();
-            }
-            #endregion
-
-            #region Editar
-            public ActionResult Edit(string id)
-            {
-                return View();
-            }
-        #endregion
-
-        #region Details
-            public ActionResult Details(string id)
-            {
-                return View();
-            }
-        #endregion
-
+        #region proceso
+        public ActionResult Ingresar(Tab_Productos prod)
+        {
+            return View();
         }
+        #endregion
+
+        #region Agregar
+        public ActionResult Create(Tab_Productos prod)
+        {
+            return View();
+        }
+        #endregion
+
+        #region Editar
+        public ActionResult Edit(string id)
+        {
+            return View();
+        }
+        #endregion
+
+        #region Consultar
+        public ActionResult Details(string id)
+        {
+            return View();
+        }
+        #endregion
+    }
 }

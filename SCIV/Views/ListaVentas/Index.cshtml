@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SCIV.Models.Tab_Lista_Ventas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout - Mantenimientos.cshtml";
+}
+
+<h2>Listas de ventas al por mayor</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <span>Cedula de la Empresa</span>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            <span>Id de la lista</span>
+        </th>
+        <th>
+           <span>Usuario creador de la lista</span>
+        </th>
+        <th>
+            <span>Nota adicional</span>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula_Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Lista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NickName_Creador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nota_Adicional)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Consultar", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Borrar", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

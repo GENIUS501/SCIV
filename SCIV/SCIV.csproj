@@ -131,12 +131,15 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Helper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaVentasController.cs" />
     <Compile Include="Controllers\MantenimientosController.cs" />
     <Compile Include="Controllers\PerfilesController.cs" />
     <Compile Include="Controllers\ProcesosController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\SeguridadController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\VentaDetalleController.cs" />
     <Compile Include="Filters\AuthorizeUser.cs" />
     <Compile Include="Filters\AuthorizeUserPermises.cs" />
     <Compile Include="Filters\Verificarsession.cs" />
@@ -277,6 +280,16 @@
     <Content Include="Views\Empresas\Create.cshtml" />
     <Content Include="Views\Empresas\Edit.cshtml" />
     <Content Include="Views\Empresas\Details.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Details.cshtml" />
+    <Content Include="Views\ListaVentas\Index.cshtml" />
+    <Content Include="Views\ListaVentas\Edit.cshtml" />
+    <Content Include="Views\ListaVentas\Create.cshtml" />
+    <Content Include="Views\Productos\Ingresar.cshtml" />
+    <Content Include="Views\VentaDetalle\Create.cshtml" />
+    <Content Include="Views\ListaVentas\Unir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

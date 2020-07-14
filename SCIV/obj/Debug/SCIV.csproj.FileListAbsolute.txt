@@ -167,3 +167,4 @@ C:\Users\Usuario\source\repos\SCIV\SCIV\SCIV\bin\es\System.Web.WebPages.Razor.re
 C:\Users\Usuario\source\repos\SCIV\SCIV\SCIV\obj\Debug\SCIV.csproj.CopyComplete
 C:\Users\Usuario\source\repos\SCIV\SCIV\SCIV\obj\Debug\SCIV.dll
 C:\Users\Usuario\source\repos\SCIV\SCIV\SCIV\obj\Debug\SCIV.pdb
+C:\Users\Usuario\source\repos\SCIV\SCIV\SCIV\obj\Debug\SCIV.csprojAssemblyReference.cache
