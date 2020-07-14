@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
+    <Compile Include="Controllers\EmpresasController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\Helper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -271,6 +272,11 @@
     <Content Include="Views\Perfiles\Index.cshtml" />
     <Content Include="Views\Perfiles\Create.cshtml" />
     <Content Include="Views\Perfiles\Edit.cshtml" />
+    <Content Include="Views\Perfiles\Details.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Empresas\Create.cshtml" />
+    <Content Include="Views\Empresas\Edit.cshtml" />
+    <Content Include="Views\Empresas\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

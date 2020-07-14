@@ -1,10 +1,12 @@
 ﻿using SCIV.Filters;
 using SCIV.Models;
+using SCIV.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace SCIV.Controllers
 {
@@ -928,7 +930,7 @@ namespace SCIV.Controllers
                     //Asigna los valores traidos por la entidad traida de la vista a la entidad traida de la base de datos
                     //registro.Id_Perfil = a.Nombre;
                     registro.Nombre_Perfil = a.Nombre_Perfil;
-                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == a.Id_Perfil));
+                   // db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == a.Id_Perfil));
                     //Guarda los cambios en bd
                     db.SaveChanges();
                 }
@@ -950,7 +952,7 @@ namespace SCIV.Controllers
 
         #region llenar details
         //Autorizar acceso a la accion
-        [AuthorizeUserPermises(accion: "C", idmodulo: 2)]
+       // [AuthorizeUserPermises(accion: "C", idmodulo: 2)]
         public ActionResult Details(string id)
         {
             try
@@ -977,7 +979,7 @@ namespace SCIV.Controllers
 
         #region Borrar
         //Autorizar acceso a la accion
-        [AuthorizeUserPermises(accion: "E", idmodulo: 2)]
+      //  [AuthorizeUserPermises(accion: "E", idmodulo: 2)]
         public ActionResult Delete(string id)
         {
             try
@@ -988,7 +990,7 @@ namespace SCIV.Controllers
                     int ida = int.Parse(id);
                     Tab_Perfiles registro = db.Tab_Perfiles.Where(a => a.Id_Perfil == ida).FirstOrDefault();
                     //Remueve del arreglo de entidades la entidad identificada enviada por la vista
-                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
+                   // db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
                     db.Tab_Perfiles.Remove(registro);
                     //Guarda los cambios en la base de datos
                     db.SaveChanges();

@@ -1,0 +1,35 @@
+﻿@model SCIV.Models.Tab_Perfiles
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tab_Perfiles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Perfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Perfil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Perfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Perfil)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
