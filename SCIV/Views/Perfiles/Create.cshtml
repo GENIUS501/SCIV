@@ -1,0 +1,133 @@
+﻿@model SCIV.Models.Tab_Perfiles
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Agregar Perfiles</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2">Id de perfil</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Id_Perfil, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Id_Perfil, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nombre de perfil</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nombre_Perfil, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre_Perfil, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <!--Permisos-->
+    <label class="control-label col-md-2">Permisos</label>
+    <div class="col-md-10">
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="radusu" value="true">
+        <label for="radusu">Usuarios</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radper" value="true">
+        <label for="radper">Perfiles</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="rademp" value="true">
+        <label for="rademp">Empresas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radprod" value="true">
+        <label for="radprod">Productos</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="lisvenrod" value="true">
+        <label for="lisvenrod">Lista de ventas al por mayor</label>
+        <br />
+        <!--Agregar-->
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="usuagregar" value="true">
+        <label for="usuagregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="perAgregar" value="true">
+        <label for="empAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="empAgregar" value="true">
+        <label for="prodAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="prodAgregar" value="true">
+        <label for="perAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lisvenAgregar" value="true">
+        <label for="lisvenAgregar">Agregar</label>
+        <!---->
+        <br />
+        <!--Actualizar-->
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuActualizar" value="true">
+        <label for="UsuActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="perActualizar" value="true">
+        <label for="perActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="empActualizar" value="true">
+        <label for="empActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="prodActualizar" value="true">
+        <label for="prodActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lisvenActualizar" value="true">
+        <label for="lisvenActualizar">Editar</label>
+        <!---->
+        <br />
+        <!--Eliminar-->
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuEliminar" value="true">
+        <label for="UsuEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="perEliminar" value="true">
+        <label for="perEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="empEliminar" value="true">
+        <label for="empEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="prodEliminar" value="true">
+        <label for="prodEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lisvenEliminar" value="true">
+        <label for="lisvenEliminar">Eliminar</label>
+        <!---->
+        <br />
+        <!--Consultar-->
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuConsult" value="true">
+        <label for="UsuConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="perConsult" value="true">
+        <label for="perConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="empConsult" value="true">
+        <label for="empConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="prodConsult" value="true">
+        <label for="prodConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lisvenConsult" value="true">
+        <label for="lisvenConsult">Consultar</label>
+        <br />
+        <!--Modulos-->
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="radingprod" value="true">
+        <label for="radingprod">Ingreso de productos</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="vendrod" value="true">
+        <label for="vendrod">Venta de Productos al detalle</label>&nbsp;
+        <br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="ulrod" value="true">
+        <label for="ulrod">Unir listas de ventas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="replvrod" value="true">
+        <label for="replvrod">Reporte de lista de ventas al por mayor</label>
+        <br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="repfvrod" value="true">
+        <label for="repfvrod">Reporte de factura de venta al detalle</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="repemprod" value="true">
+        <label for="repemprod">Reporte de empresa</label>
+        <br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="bitsesrod" value="true">
+        <label for="bitsesrod">Bitacora de sesiones "Ingreso y salida"</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="bitmovrod" value="true">
+        <label for="bitmovrod">Bitacora de movimientos realizados en el sistema</label>
+        <!---->
+    </div>
+    <!--Termina aqui-->
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Volver a la lista", "Index")
+</div>

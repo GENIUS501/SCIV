@@ -529,6 +529,291 @@ namespace SCIV.Controllers
                 }
                 #endregion
 
+                #region reporte_listas_ventas 9
+                if (frm["replvrod"] == null)
+                {
+
+                }
+                else
+                {
+
+                    using (var db = new SCIVEntities())
+                    {
+                        Tab_Permisos perm = new Tab_Permisos();
+                        perm.Id_Perfil = per.Id_Perfil;
+                        perm.Modulo = 9;
+                        //Agregar
+                        if (frm["replvAgregar"] != null)
+                        {
+                            perm.Agregar = "S";
+                        }
+                        else
+                        {
+                            perm.Agregar = "N";
+                        }
+                        //Actualizar
+                        if (frm["replvActualizar"] != null)
+                        {
+                            perm.Modificar = "S";
+                        }
+                        else
+                        {
+                            perm.Modificar = "N";
+                        }
+                        //Eliminar
+                        if (frm["replvEliminar"] != null)
+                        {
+                            perm.Eliminar = "S";
+                        }
+                        else
+                        {
+                            perm.Eliminar = "N";
+                        }
+                        //Consultar
+                        if (frm["replvConsult"] != null)
+                        {
+                            perm.Consultar = "S";
+                        }
+                        else
+                        {
+                            perm.Consultar = "N";
+                        }
+
+                        //Grabar
+                        db.Tab_Permisos.Add(perm);
+                        db.SaveChanges();
+                    }
+                }
+                #endregion
+
+                #region reporte_factura_venta 10
+                if (frm["repfvrod"] == null)
+                {
+
+                }
+                else
+                {
+
+                    using (var db = new SCIVEntities())
+                    {
+                        Tab_Permisos perm = new Tab_Permisos();
+                        perm.Id_Perfil = per.Id_Perfil;
+                        perm.Modulo = 10;
+                        //Agregar
+                        if (frm["repfvAgregar"] != null)
+                        {
+                            perm.Agregar = "S";
+                        }
+                        else
+                        {
+                            perm.Agregar = "N";
+                        }
+                        //Actualizar
+                        if (frm["repfvActualizar"] != null)
+                        {
+                            perm.Modificar = "S";
+                        }
+                        else
+                        {
+                            perm.Modificar = "N";
+                        }
+                        //Eliminar
+                        if (frm["repfvEliminar"] != null)
+                        {
+                            perm.Eliminar = "S";
+                        }
+                        else
+                        {
+                            perm.Eliminar = "N";
+                        }
+                        //Consultar
+                        if (frm["repfvConsult"] != null)
+                        {
+                            perm.Consultar = "S";
+                        }
+                        else
+                        {
+                            perm.Consultar = "N";
+                        }
+
+                        //Grabar
+                        db.Tab_Permisos.Add(perm);
+                        db.SaveChanges();
+                    }
+                }
+                #endregion
+
+                #region reporte_empresa 11
+                if (frm["repemprod"] == null)
+                {
+
+                }
+                else
+                {
+
+                    using (var db = new SCIVEntities())
+                    {
+                        Tab_Permisos perm = new Tab_Permisos();
+                        perm.Id_Perfil = per.Id_Perfil;
+                        perm.Modulo = 11;
+                        //Agregar
+                        if (frm["repempAgregar"] != null)
+                        {
+                            perm.Agregar = "S";
+                        }
+                        else
+                        {
+                            perm.Agregar = "N";
+                        }
+                        //Actualizar
+                        if (frm["repempActualizar"] != null)
+                        {
+                            perm.Modificar = "S";
+                        }
+                        else
+                        {
+                            perm.Modificar = "N";
+                        }
+                        //Eliminar
+                        if (frm["repempEliminar"] != null)
+                        {
+                            perm.Eliminar = "S";
+                        }
+                        else
+                        {
+                            perm.Eliminar = "N";
+                        }
+                        //Consultar
+                        if (frm["repempConsult"] != null)
+                        {
+                            perm.Consultar = "S";
+                        }
+                        else
+                        {
+                            perm.Consultar = "N";
+                        }
+
+                        //Grabar
+                        db.Tab_Permisos.Add(perm);
+                        db.SaveChanges();
+                    }
+                }
+                #endregion
+
+                #region bitacora_ingreso_salida 12
+                if (frm["bitsesrod"] == null)
+                {
+
+                }
+                else
+                {
+
+                    using (var db = new SCIVEntities())
+                    {
+                        Tab_Permisos perm = new Tab_Permisos();
+                        perm.Id_Perfil = per.Id_Perfil;
+                        perm.Modulo = 12;
+                        //Agregar
+                        if (frm["bitsesrodAgregar"] != null)
+                        {
+                            perm.Agregar = "S";
+                        }
+                        else
+                        {
+                            perm.Agregar = "N";
+                        }
+                        //Actualizar
+                        if (frm["bitsesrodActualizar"] != null)
+                        {
+                            perm.Modificar = "S";
+                        }
+                        else
+                        {
+                            perm.Modificar = "N";
+                        }
+                        //Eliminar
+                        if (frm["bitsesrodEliminar"] != null)
+                        {
+                            perm.Eliminar = "S";
+                        }
+                        else
+                        {
+                            perm.Eliminar = "N";
+                        }
+                        //Consultar
+                        if (frm["bitsesrodConsult"] != null)
+                        {
+                            perm.Consultar = "S";
+                        }
+                        else
+                        {
+                            perm.Consultar = "N";
+                        }
+
+                        //Grabar
+                        db.Tab_Permisos.Add(perm);
+                        db.SaveChanges();
+                    }
+                }
+                #endregion
+
+                #region bitacora_movimiento 13
+                if (frm["bitmovrod"] == null)
+                {
+
+                }
+                else
+                {
+
+                    using (var db = new SCIVEntities())
+                    {
+                        Tab_Permisos perm = new Tab_Permisos();
+                        perm.Id_Perfil = per.Id_Perfil;
+                        perm.Modulo = 13;
+                        //Agregar
+                        if (frm["bitmovAgregar"] != null)
+                        {
+                            perm.Agregar = "S";
+                        }
+                        else
+                        {
+                            perm.Agregar = "N";
+                        }
+                        //Actualizar
+                        if (frm["bitmovActualizar"] != null)
+                        {
+                            perm.Modificar = "S";
+                        }
+                        else
+                        {
+                            perm.Modificar = "N";
+                        }
+                        //Eliminar
+                        if (frm["bitmovEliminar"] != null)
+                        {
+                            perm.Eliminar = "S";
+                        }
+                        else
+                        {
+                            perm.Eliminar = "N";
+                        }
+                        //Consultar
+                        if (frm["bitmovConsult"] != null)
+                        {
+                            perm.Consultar = "S";
+                        }
+                        else
+                        {
+                            perm.Consultar = "N";
+                        }
+
+                        //Grabar
+                        db.Tab_Permisos.Add(perm);
+                        db.SaveChanges();
+                    }
+                }
+                #endregion
+
             }
             catch (Exception ex)
             {
