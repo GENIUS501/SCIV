@@ -37,9 +37,19 @@
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.Id_Perfil }) |
                 @Html.ActionLink("Consultar", "Details", new { id = item.Id_Perfil }) |
-                @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Perfil })
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Perfil }, new { @class = "aElimina" })
             </td>
         </tr>
     }
 
 </table>
+<!--Ventana de esta seguro-->
+@section scripts{
+    <script>
+        $(".aElimina").click(function (event) {
+            if (!confirm("Realmente de eliminar el usuario?")) {
+                event.preventDefault();
+            }
+        });
+    </script>
+}

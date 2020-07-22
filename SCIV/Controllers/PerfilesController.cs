@@ -7,14 +7,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.Windows.Controls;
 
 namespace SCIV.Controllers
 {
     public class PerfilesController : Controller
     {
+       // public void RemoveRange(int index, int count);
         // GET: Perfiles
         //Autorizar acceso al modulo
-       // [AuthorizeUser(idmodulo: 2)]
+        // [AuthorizeUser(idmodulo: 2)]
         public ActionResult Index()
         {
             try
@@ -1097,8 +1099,8 @@ namespace SCIV.Controllers
                     int ida = int.Parse(id);
                     Tab_Perfiles registro = db.Tab_Perfiles.Where(a => a.Id_Perfil == ida).FirstOrDefault();
                     //Remueve del arreglo de entidades la entidad identificada enviada por la vista
-                   // db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
-                    db.Tab_Perfiles.Remove(registro);
+                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
+                    db.Tab_Perfiles.Remove(registro);                    
                     //Guarda los cambios en la base de datos
                     db.SaveChanges();
                     TempData["msg"] = "<script>alert('Perfil Eliminado exitosamente!!!');</script>";

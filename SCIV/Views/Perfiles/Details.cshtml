@@ -4,11 +4,14 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
 }
-
-<h2>Details</h2>
+<br />
+<br />
+<br />
+<br />
+<h2>Modulo de Perfiles</h2>
 
 <div>
-    <h4>Tab_Perfiles</h4>
+    <h4>Consultar Perfiles</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,9 +30,222 @@
             @Html.DisplayFor(model => model.Nombre_Perfil)
         </dd>
 
+        <dt>
+            @if (ViewBag.Mod_Usu == "true")
+            {
+                @Html.Raw("Usuarios:");
+            }
+        </dt>
+
+        <dd>
+            @{
+                if (ViewBag.Agregar_usu == "true")
+                {
+                    @Html.Raw("Agregar ");
+                }
+                if (ViewBag.Modificar_usu == "true")
+                {
+                    @Html.Raw("Editar ");
+                }
+                if (ViewBag.Eliminar_usu == "true")
+                {
+                    @Html.Raw("Eliminar ");
+                }
+                if (ViewBag.Consultar_usu == "true")
+                {
+                    @Html.Raw("Consultar");
+                }
+            }
+        </dd>
+
+        <dt>
+            @if (ViewBag.Mod_Per == "true")
+            {
+                @Html.Raw("Perfiles:");
+            }
+        </dt>
+
+        <dd>
+            @{
+                if (ViewBag.Agregar_per == "true")
+                {
+                    @Html.Raw("Agregar ");
+                }
+                if (ViewBag.Modificar_per == "true")
+                {
+                    @Html.Raw("Editar ");
+                }
+                if (ViewBag.Eliminar_per == "true")
+                {
+                    @Html.Raw("Eliminar ");
+                }
+                if (ViewBag.Consultar_per == "true")
+                {
+                    @Html.Raw("Consultar");
+                }
+            }
+        </dd>
+
+        <dt>
+            @if (ViewBag.Mod_Emp == "true")
+            {
+                @Html.Raw("Empresas:");
+            }
+        </dt>
+
+        <dd>
+            @{
+                if (ViewBag.Agregar_Emp == "true")
+                {
+                    @Html.Raw("Agregar ");
+                }
+                if (ViewBag.Modificar_Emp == "true")
+                {
+                    @Html.Raw("Editar ");
+                }
+                if (ViewBag.Eliminar_Emp == "true")
+                {
+                    @Html.Raw("Eliminar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Consultar_Emp == "true")
+                {
+                    @Html.Raw("Consultar");
+                }
+            }
+        </dd>
+
+        <dt>
+            @if (ViewBag.Mod_Prod == "true")
+            {
+                @Html.Raw("Productos:");
+            }
+        </dt>
+
+        <dd>
+            @{
+                if (ViewBag.Agregar_Prod == "true")
+                {
+                    @Html.Raw("Agregar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Modificar_Prod == "true")
+                {
+                    @Html.Raw("Editar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Eliminar_Prod == "true")
+                {
+                    @Html.Raw("Eliminar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Consultar_Prod == "true")
+                {
+                    @Html.Raw("Consultar");
+                }
+            }
+        </dd>
+
+        <dt>
+            @if (ViewBag.Mod_lisven == "true")
+            {
+                @Html.Raw("Lista de ventas al por mayor:");
+            }
+        </dt>
+
+        <dd>
+            <br />
+            @{
+                if (ViewBag.Agregar_lisven == "true")
+                {
+                    @Html.Raw("Agregar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Modificar_lisven == "true")
+                {
+                    @Html.Raw("Editar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Eliminar_lisven == "true")
+                {
+                    @Html.Raw("Eliminar ");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+                if (ViewBag.Consultar_lisven == "true")
+                {
+                    @Html.Raw("Consultar");
+                }
+                else
+                {
+                    @Html.Raw("")
+                }
+            }
+        </dd>
+
+        <dt>
+            <br />
+            @Html.Raw("Otros Permisos:")
+        </dt>
+        <dd>
+            <br />
+            @if (ViewBag.Mod_ingprod == "true")
+            {
+                @Html.Raw("Ingreso de Productos,");
+            }
+            @if (ViewBag.Mod_vend == "true")
+            {
+                @Html.Raw("Venta de productos al detalle,");
+            }
+            @if (ViewBag.Mod_ul == "true")
+            {
+                @Html.Raw("Unir listas de ventas,");
+            }
+            @if (ViewBag.Mod_replv == "true")
+            {
+                @Html.Raw("Reporte de lista de ventas al por mayor,");
+            }
+            @if (ViewBag.Mod_repfv == "true")
+            {
+                @Html.Raw("Reporte de factura de venta al detalle,");
+            }
+            @if (ViewBag.Mod_repemp == "true")
+            {
+                @Html.Raw("Reporte de empresa,");
+            }
+            @if (ViewBag.Mod_bitses == "true")
+            {
+                @Html.Raw("Bitacora de sesiones 'Ingreso y salida',");
+            }
+            @if (ViewBag.Mod_bitmov == "true")
+            {
+                @Html.Raw("Bitacora de movimientos realizados en el sistema");
+            }
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new {  id = Model.Id_Perfil }) |
+    @Html.ActionLink("Volver a la lista", "Index")
 </p>
