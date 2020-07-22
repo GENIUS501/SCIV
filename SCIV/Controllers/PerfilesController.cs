@@ -1039,7 +1039,7 @@ namespace SCIV.Controllers
                     //Asigna los valores traidos por la entidad traida de la vista a la entidad traida de la base de datos
                     //registro.Id_Perfil = a.Nombre;
                     registro.Nombre_Perfil = a.Nombre_Perfil;
-                   // db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == a.Id_Perfil));
+                    db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == a.Id_Perfil));
                     //Guarda los cambios en bd
                     db.SaveChanges();
                 }
