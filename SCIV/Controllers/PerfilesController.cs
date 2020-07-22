@@ -13,7 +13,7 @@ namespace SCIV.Controllers
 {
     public class PerfilesController : Controller
     {
-       // public void RemoveRange(int index, int count);
+        private Tab_Usuarios Ent_Usuario;
         // GET: Perfiles
         //Autorizar acceso al modulo
         // [AuthorizeUser(idmodulo: 2)]
@@ -1102,6 +1102,16 @@ namespace SCIV.Controllers
                     db.Tab_Permisos.RemoveRange(db.Tab_Permisos.Where(c => c.Id_Perfil == ida));
                     db.Tab_Perfiles.Remove(registro);                    
                     //Guarda los cambios en la base de datos
+                   // db.SaveChanges();
+                    Tab_Bitacora_Movimientos Mov = new Tab_Bitacora_Movimientos();
+                    Mov.Fecha_Hora = DateTime.Now;
+                    Mov.Modulo_Afectado = "Perfiles de acceso";
+                    Ent_Usuario = new Tab_Usuarios();
+                    Ent_Usuario = System.Web.HttpContext.Current.Session["User"] as Tab_Usuarios;
+                    //Ent_Usuario = (Tab_Usuarios)HttpContext.Current.Session["User"];
+                    Mov.NickName = Ent_Usuario.NickName;
+                    Mov.Tipo_Movimiento = "Elimino";
+                    db.Tab_Bitacora_Movimientos.Add(Mov);
                     db.SaveChanges();
                     TempData["msg"] = "<script>alert('Perfil Eliminado exitosamente!!!');</script>";
                     return RedirectToAction("index");
