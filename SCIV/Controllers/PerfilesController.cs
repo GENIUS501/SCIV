@@ -834,6 +834,28 @@ namespace SCIV.Controllers
                 {
                     if (list.Modulo == 1)
                     {
+                        ViewBag.Mod_Per = "true";
+                        #region Permisos de acceso
+                        if (list.Agregar == "S")
+                        {
+                            ViewBag.Agregar_Per = "true";
+                        }
+                        if (list.Modificar == "S")
+                        {
+                            ViewBag.Modificar_Per = "true";
+                        }
+                        if (list.Consultar == "S")
+                        {
+                            ViewBag.Consultar_Per = "true";
+                        }
+                        if (list.Eliminar == "S")
+                        {
+                            ViewBag.Eliminar_Per = "true";
+                        }
+                        #endregion
+                    }
+                    if (list.Modulo == 2)
+                    {
                         ViewBag.Mod_Usu = "true";
                         #region Permisos de acceso
                         if (list.Agregar == "S")
@@ -854,27 +876,112 @@ namespace SCIV.Controllers
                         }
                         #endregion
                     }
-                    if (list.Modulo == 2)
+                    if (list.Modulo == 3)
                     {
-                        ViewBag.Mod_Per = "true";
+                        ViewBag.Mod_Emp = "true";
                         #region Permisos de acceso
                         if (list.Agregar == "S")
                         {
-                            ViewBag.Agregar_Per = "true";
+                            ViewBag.Agregar_Emp = "true";
                         }
                         if (list.Modificar == "S")
                         {
-                            ViewBag.Modificar_Per = "true";
+                            ViewBag.Modificar_Emp = "true";
                         }
                         if (list.Consultar == "S")
                         {
-                            ViewBag.Consultar_Per = "true";
+                            ViewBag.Consultar_Emp = "true";
                         }
                         if (list.Eliminar == "S")
                         {
-                            ViewBag.Eliminar_Per = "true";
+                            ViewBag.Eliminar_Emp = "true";
                         }
                         #endregion
+                    }
+
+                    if (list.Modulo == 4)
+                    {
+                        ViewBag.Mod_Prod = "true";
+                        #region Permisos de acceso
+                        if (list.Agregar == "S")
+                        {
+                            ViewBag.Agregar_Prod = "true";
+                        }
+                        if (list.Modificar == "S")
+                        {
+                            ViewBag.Modificar_Prod = "true";
+                        }
+                        if (list.Consultar == "S")
+                        {
+                            ViewBag.Consultar_Prod = "true";
+                        }
+                        if (list.Eliminar == "S")
+                        {
+                            ViewBag.Eliminar_Prod = "true";
+                        }
+                        #endregion
+                    }
+
+                    if (list.Modulo == 5)
+                    {
+                        ViewBag.Mod_ingprod = "true";
+                    }
+
+                    if (list.Modulo == 6)
+                    {
+                        ViewBag.Mod_lisven = "true";
+                        #region Permisos de acceso
+                        if (list.Agregar == "S")
+                        {
+                            ViewBag.Agregar_lisven = "true";
+                        }
+                        if (list.Modificar == "S")
+                        {
+                            ViewBag.Modificar_lisven = "true";
+                        }
+                        if (list.Consultar == "S")
+                        {
+                            ViewBag.Consultar_lisven = "true";
+                        }
+                        if (list.Eliminar == "S")
+                        {
+                            ViewBag.Eliminar_lisven = "true";
+                        }
+                        #endregion
+                    }
+
+                    if (list.Modulo == 7)
+                    {
+                        ViewBag.Mod_vend = "true";
+                    }
+
+                    if (list.Modulo == 8)
+                    {
+                        ViewBag.Mod_ul = "true";
+                    }
+
+                    if (list.Modulo == 9)
+                    {
+                        ViewBag.Mod_replv = "true";
+                    }
+
+                    if (list.Modulo == 10)
+                    {
+                        ViewBag.Mod_repfv = "true";
+                    }
+                    if (list.Modulo == 11)
+                    {
+                        ViewBag.Mod_repemp = "true";
+                    }
+
+                    if (list.Modulo == 12)
+                    {
+                        ViewBag.Mod_bitses = "true";
+                    }
+
+                    if (list.Modulo == 13)
+                    {
+                        ViewBag.Mod_bitmov = "true";
                     }
                 }
             }

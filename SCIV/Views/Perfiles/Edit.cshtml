@@ -4,15 +4,19 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout-Seguridad.cshtml";
 }
+<br/>
+<br />
+<br />
+<br />
 
-<h2>Edit</h2>
+<h2>Mantenimiento Perfiles</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Tab_Perfiles</h4>
+    <h4>Editar Perfil</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -30,104 +34,464 @@
             @Html.ValidationMessageFor(model => model.Nombre_Perfil, "", new { @class = "text-danger" })
         </div>
     </div>
-
-    <!--Permisos-->
-    <label class="control-label col-md-2">Permisos</label>
-    <div class="col-md-10">
-        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="radusu" value="true">
-        <label for="radusu">Usuarios</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="radper" value="true">
-        <label for="radper">Perfiles</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="rademp" value="true">
-        <label for="rademp">Empresas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="radprod" value="true">
-        <label for="radprod">Productos</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="lisvenrod" value="true">
-        <label for="lisvenrod">Lista de ventas al por mayor</label>
-        <br />
-        <!--Agregar-->
-        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="usuagregar" value="true">
-        <label for="usuagregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="perAgregar" value="true">
-        <label for="empAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="empAgregar" value="true">
-        <label for="prodAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="prodAgregar" value="true">
-        <label for="perAgregar">Agregar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="lisvenAgregar" value="true">
-        <label for="lisvenAgregar">Agregar</label>
-        <!---->
-        <br />
-        <!--Actualizar-->
-        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuActualizar" value="true">
-        <label for="UsuActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="perActualizar" value="true">
-        <label for="perActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="empActualizar" value="true">
-        <label for="empActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="prodActualizar" value="true">
-        <label for="prodActualizar">Editar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="lisvenActualizar" value="true">
-        <label for="lisvenActualizar">Editar</label>
-        <!---->
-        <br />
-        <!--Eliminar-->
-        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuEliminar" value="true">
-        <label for="UsuEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="perEliminar" value="true">
-        <label for="perEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="empEliminar" value="true">
-        <label for="empEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="prodEliminar" value="true">
-        <label for="prodEliminar">Eliminar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="lisvenEliminar" value="true">
-        <label for="lisvenEliminar">Eliminar</label>
-        <!---->
-        <br />
-        <!--Consultar-->
-        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="UsuConsult" value="true">
-        <label for="UsuConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="perConsult" value="true">
-        <label for="perConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="empConsult" value="true">
-        <label for="empConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="prodConsult" value="true">
-        <label for="prodConsult">Consultar</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="lisvenConsult" value="true">
-        <label for="lisvenConsult">Consultar</label>
-        <br />
-        <!--Modulos-->
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="radingprod" value="true">
-        <label for="radingprod">Ingreso de productos</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="vendrod" value="true">
-        <label for="vendrod">Venta de Productos al detalle</label>&nbsp;
-        <br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="ulrod" value="true">
-        <label for="ulrod">Unir listas de ventas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="replvrod" value="true">
-        <label for="replvrod">Reporte de lista de ventas al por mayor</label>
-        <br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="repfvrod" value="true">
-        <label for="repfvrod">Reporte de factura de venta al detalle</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="repemprod" value="true">
-        <label for="repemprod">Reporte de empresa</label>
-        <br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="bitsesrod" value="true">
-        <label for="bitsesrod">Bitacora de sesiones "Ingreso y salida"</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="bitmovrod" value="true">
-        <label for="bitmovrod">Bitacora de movimientos realizados en el sistema</label>
-        <!---->
-    </div>
-    <!--Termina aqui-->
-
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+        <label class="control-label col-md-2">Permisos</label>
+        <!--Permisos-->
+        <div class="col-md-10">
+            @{
+                //Modulos
+                string strSpacer = "&nbsp;";
+                string strSpacer3 = "&nbsp;&nbsp;&nbsp;";
+                string strSpacer5 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                string strSpacer10 = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                //Usuarios
+                if (ViewBag.Mod_Usu == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="radusu" value="true" checked="checked">
+                    <label for="radusu">Usuarios</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="radusu" value="true">
+                    <label for="radusu">Usuarios</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+                //Perfiles
+                if (ViewBag.Mod_Per == "true")
+                {
+                    <input type="radio" name="radper" value="true" checked="checked">
+                    <label for="radper">Perfiles</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)
+
+                }
+                else
+                {
+                    <input type="radio" name="radper" value="true">
+                    <label for="radper">Perfiles</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)
+
+                }
+                //Empresas
+                if (ViewBag.Mod_Emp == "true")
+                {
+                    <input type="radio" name="rademp" value="true" checked="checked">
+                    <label for="rademp">Empresas</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+
+                }
+                else
+                {
+                    <input type="radio" name="rademp" value="true">
+                    <label for="rademp">Empresas</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+
+                }
+                //Productos
+                if (ViewBag.Mod_Prod == "true")
+                {
+                    <input type="radio" name="radprod" value="true" checked="checked">
+                    <label for="radprod">Productos</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+
+                }
+                else
+                {
+                    <input type="radio" name="radprod" value="true">
+                    <label for="radprod">Productos</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+
+                }
+
+                //Lista de ventas al por mayor
+                if (ViewBag.Mod_lisven == "true")
+                {
+                    <input type="radio" name="lisvenrod" value="true" checked="checked">
+                    <label for="lisvenrod">Lista de ventas al por mayor</label>
+                    <br />
+                }
+                else
+                {
+                    <input type="radio" name="lisvenrod" value="true">
+                    <label for="lisvenrod">Lista de ventas al por mayor</label>
+                    <br />
+                }
+
+                //Agregar
+                if (ViewBag.Agregar_usu == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="usuagregar" value="true" checked="checked">
+                    <label for="usuagregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="usuagregar" value="true">
+                    <label for="usuagregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+
+                //Perfiles
+                if (ViewBag.Agregar_per == "true")
+                {
+                    <input type="checkbox" name="perAgregar" value="true" checked="checked">
+                    <label for="perAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    <input type="checkbox" name="perAgregar" value="true">
+                    <label for="perAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+
+                //Empresas
+                if (ViewBag.Agregar_Emp == "true")
+                {
+                    <input type="checkbox" name="empAgregar" value="true" checked="checked">
+                    <label for="empAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    <input type="checkbox" name="empAgregar" value="true">
+                    <label for="empAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)
+                }
+
+                //Productos
+                if (ViewBag.Agregar_Prod == "true")
+                {
+                    <input type="checkbox" name="prodAgregar" value="true" checked="checked">
+                    <label for="prodAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    <input type="checkbox" name="prodAgregar" value="true">
+                    <label for="prodAgregar">Agregar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+
+                //Lista de ventas al por mayor
+                if (ViewBag.Agregar_lisven == "true")
+                {
+                    <input type="checkbox" name="lisvenAgregar" value="true" checked="checked">
+                    <label for="lisvenAgregar">Agregar</label><br />
+                }
+                else
+                {
+                    <input type="checkbox" name="lisvenAgregar" value="true">
+                    <label for="lisvenAgregar">Agregar</label><br />
+                }
+
+                //Modificar
+
+                //Usuario
+                if (ViewBag.Modificar_usu == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuActualizar" value="true" checked="checked">
+
+
+                    <label for="UsuActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuActualizar" value="true">
+
+
+                    <label for="UsuActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+                }
+                //Perfiles
+                if (ViewBag.Modificar_per == "true")
+                {
+                    <input type="checkbox" name="perActualizar" value="true" checked="checked">
+                    <label for="perActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    <input type="checkbox" name="perActualizar" value="true">
+                    <label for="perActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+
+                //Empresas
+                if (ViewBag.Modificar_Emp == "true")
+                {
+                    <input type="checkbox" name="empActualizar" value="true" checked="checked">
+                    <label for="empActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+
+                }
+                else
+                {
+                    <input type="checkbox" name="empActualizar">
+                    <label for="empActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+
+                }
+
+                //Productos
+                if (ViewBag.Modificar_Prod == "true")
+                {
+                    <input type="checkbox" name="prodActualizar" value="true" checked="checked">
+                    <label for="prodActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+
+                }
+                else
+                {
+                    <input type="checkbox" name="prodActualizar">
+                    <label for="prodActualizar">Editar</label>@Html.Raw(strSpacer5)@Html.Raw(strSpacer5)@Html.Raw(strSpacer3)
+
+                }
+
+                //Lista de ventas
+                if (ViewBag.Modificar_lisven == "true")
+                {
+                    <input type="checkbox" name="lisvenActualizar" value="true" checked="checked">
+                    <label for="lisvenActualizar">Editar</label>
+
+                }
+                else
+                {
+                    <input type="checkbox" name="lisvenActualizar">
+                    <label for="lisvenActualizar">Editar</label>
+
+                }
+                <br />
+
+                //Eliminar
+
+                //Usuarios
+                if (ViewBag.Eliminar_usu == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuEliminar" value="true" checked="checked">
+
+
+                    <label for="UsuEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuEliminar" value="true">
+
+
+                    <label for="UsuEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Perfiles
+                if (ViewBag.Eliminar_Per == "true")
+                {
+                    <input type="checkbox" name="perEliminar" value="true" checked="checked">
+                    <label for="perEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)
+                }
+                else
+                {
+                    <input type="checkbox" name="perEliminar" value="true">
+                    <label for="perEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer5)
+                }
+
+                //Empresas
+                if (ViewBag.Eliminar_Emp == "true")
+                {
+                    <input type="checkbox" name="empEliminar" value="true" checked="checked">
+                    <label for="empEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    <input type="checkbox" name="empEliminar" value="true">
+                    <label for="empEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Productos
+                if (ViewBag.Eliminar_Prod == "true")
+                {
+                    <input type="checkbox" name="prodEliminar" value="true" checked="checked">
+                    <label for="prodEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    <input type="checkbox" name="prodEliminar" value="true">
+                    <label for="prodEliminar">Eliminar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Lista de ventas
+                if (ViewBag.Eliminar_lisven == "true")
+                {
+                    <input type="checkbox" name="lisvenEliminar" value="true" checked="checked">
+                    <label for="lisvenEliminar">Eliminar</label>
+                }
+                else
+                {
+                    <input type="checkbox" name="lisvenEliminar" value="true">
+                    <label for="lisvenEliminar">Eliminar</label>
+                }
+
+                <br />
+                //Consultar
+
+                //Usuarios
+                if (ViewBag.Consultar_usu == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuConsult" value="true" checked="checked">
+
+
+                    <label for="UsuConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="checkbox" name="UsuConsult" value="true">
+
+
+                    <label for="UsuConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Perfiles
+                if (ViewBag.Consultar_Per == "true")
+                {
+                    <input type="checkbox" name="perConsult" value="true" checked="checked">
+                    <label for="perConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    <input type="checkbox" name="perConsult" value="true">
+                    <label for="perConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Empresas
+                if (ViewBag.Consultar_Emp == "true")
+                {
+                    <input type="checkbox" name="empConsult" value="true" checked="checked">
+                    <label for="empConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    <input type="checkbox" name="empConsult" value="true">
+                    <label for="empConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Productos
+                if (ViewBag.Consultar_Prod == "true")
+                {
+                    <input type="checkbox" name="prodConsult" value="true" checked="checked">
+                    <label for="prodConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    <input type="checkbox" name="prodConsult" value="true">
+                    <label for="prodConsult">Consultar</label>@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)@Html.Raw(strSpacer)
+                }
+
+                //Lista de ventas
+                if (ViewBag.Consultar_lisven == "true")
+                {
+                    <input type="checkbox" name="lisvenConsult" value="true" checked="checked">
+                    <label for="lisvenConsult">Consultar</label>
+                }
+                else
+                {
+                    <input type="checkbox" name="lisvenConsult" value="true">
+                    <label for="lisvenConsult">Consultar</label>
+                }
+
+                <br />
+
+                //Otros
+                //Ingreso de productos
+                if (ViewBag.Mod_ingprod == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="radingprod" value="true" checked="checked">
+                    <label for="radingprod">Ingreso de productos</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="radingprod" value="true">
+                    <label for="radingprod">Ingreso de productos</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer3)
+                }
+
+                //Venta de Productos al detalle
+                if (ViewBag.Mod_vend == "true")
+                {
+                    <input type="radio" name="vendrod" value="true" checked="checked">
+                    <label for="vendrod">Venta de Productos al detalle</label>
+                }
+                else
+                {
+                    <input type="radio" name="vendrod" value="true">
+                    <label for="vendrod">Venta de Productos al detalle</label>
+                }
+
+                <br />
+
+                //Unir lista de ventas
+                if (ViewBag.Mod_ul == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="ulrod" value="true" checked="checked">
+                    <label for="ulrod">Unir listas de ventas</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer5)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="ulrod" value="true">
+                    <label for="ulrod">Unir listas de ventas</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer10)@Html.Raw(strSpacer5)
+                }
+
+                //Reporte de lista de ventas al por mayor
+                if (ViewBag.Mod_replv == "true")
+                {
+                    <input type="radio" name="replvrod" value="true" checked="checked">
+                    <label for="replvrod">Reporte de lista de ventas al por mayor</label>
+                }
+                else
+                {
+                    <input type="radio" name="replvrod" value="true">
+                    <label for="replvrod">Reporte de lista de ventas al por mayor</label>
+                }
+
+                <br />
+
+                //Reporte de factura de venta al detalle
+                if (ViewBag.Mod_repfv == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="repfvrod" value="true" checked="checked">
+                    <label for="repfvrod">Reporte de factura de venta al detalle</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="repfvrod" value="true">
+                    <label for="repfvrod">Unir listas de ventas</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer3)@Html.Raw(strSpacer3)
+                }
+
+                //Reporte de empresa
+                if (ViewBag.Mod_repemp == "true")
+                {
+                    <input type="radio" name="repemprod" value="true" checked="checked">
+                    <label for="repemprod">Reporte de empresa</label>
+                }
+                else
+                {
+                    <input type="radio" name="repemprod" value="true">
+                    <label for="repemprod">Reporte de empresa</label>
+                }
+
+                <br />
+
+                //Bitacora de sesiones "Ingreso y salida"
+                if (ViewBag.Mod_bitses == "true")
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="bitsesrod" value="true" checked="checked">
+                    <label for="bitsesrod">Bitacora de sesiones "Ingreso y salida"</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+                else
+                {
+                    @Html.Raw(strSpacer3)<input type="radio" name="bitsesrod" value="true">
+                    <label for="bitsesrod">Bitacora de sesiones "Ingreso y salida"</label>@Html.Raw(strSpacer10)@Html.Raw(strSpacer)@Html.Raw(strSpacer)
+                }
+
+                //Bitacora de movimientos realizados en el sistema
+                if (ViewBag.Mod_bitmov == "true")
+                {
+                    <input type="radio" name="bitmovrod" value="true" checked="checked">
+                    <label for="bitmovrod">Bitacora de movimientos realizados en el sistema</label>
+                }
+                else
+                {
+                    <input type="radio" name="bitmovrod" value="true">
+                    <label for="bitmovrod">Bitacora de movimientos realizados en el sistema</label>
+                }
+
+                <br />
+
+            }
+        </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Modificar" class="btn btn-default" />
+            </div>
         </div>
     </div>
-</div>
-}
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Volver a la lista", "Index")
+    </div>
